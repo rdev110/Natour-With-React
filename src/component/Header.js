@@ -1,20 +1,49 @@
-const Header = () => {
+import React from "react";
+import PropTypes from "prop-types";
+
+const Header = ({
+  logoSrc = "img/logo-white.png",
+  logoAlt = "logo",
+  mainTitle = "OUT DOORS",
+  subTitle = "Is where life happens",
+  ctaText = "DISCOVER OUR TOURS",
+  ctaHref = "#",
+}) => {
   return (
-    <header className="header">
+    <header className="header" aria-label="Hero section">
       <div className="header__logo-box">
-        <img src="img/logo-white.png" alt="logo" className="header__logo"></img>
+        <img
+          src={logoSrc}
+          alt={logoAlt}
+          className="header__logo"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className="header__text-box">
         <h1 className="heading-primary">
-          <span className="heading-primary--main">OUT DOORS</span>
-          <span className="heading-primary--sub">Is where life happens</span>
+          <span className="heading-primary--main">{mainTitle}</span>
+          <span className="heading-primary--sub">{subTitle}</span>
         </h1>
-        <a href="http" className="btn btn--white btn--animated">
-          DISCOVER OUR TOURS
+        <a
+          href={ctaHref}
+          className="btn btn--white btn--animated"
+          aria-label={ctaText}
+        >
+          {ctaText}
         </a>
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  logoSrc: PropTypes.string,
+  logoAlt: PropTypes.string,
+  mainTitle: PropTypes.string,
+  subTitle: PropTypes.string,
+  ctaText: PropTypes.string,
+  ctaHref: PropTypes.string,
 };
 
 export default Header;
