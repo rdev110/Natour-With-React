@@ -27,3 +27,10 @@ Plain JavaScript (no TypeScript), prop-driven, and designed to be easily reusabl
 ```bash
 git clone <your-repo-url>
 cd <your-project-directory>
+
+## 🎨 Credits
+
+The SCSS/CSS styling used in this project is adapted from [Trainer/Source Name]’s course/tutorial.  
+All design credit for the original styles belongs to them.  
+I have only reused and integrated it into a React component structure.
+
