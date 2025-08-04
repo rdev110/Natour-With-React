@@ -46,4 +46,4 @@ yarn start
 
 The SCSS/CSS styling used in this project is adapted from Jonas Schmedtmann’s course/tutorial.  
 All design credit for the original styles belongs to them.  
-I have only reused and integrated it into a React component structure.
+I have extended it ot integrate it into a React component structure.
