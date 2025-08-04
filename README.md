@@ -34,5 +34,14 @@ I have only reused and integrated it into a React component structure.
 git clone <your-repo-url>
 cd <your-project-directory>
 
+npm install
+# or
+yarn install
+
+npm start
+# or
+yarn start
+
+
 
 
