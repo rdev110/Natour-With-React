@@ -20,6 +20,12 @@ Plain JavaScript (no TypeScript), prop-driven, and designed to be easily reusabl
 - npm or yarn
 - A bundler/setup (e.g., Create React App, Vite, Next.js, or custom Webpack) — this README assumes a basic Create React App style project.
 
+## 🎨 Credits
+
+The SCSS/CSS styling used in this project is adapted from Jonas Schmedtmann’s course/tutorial.  
+All design credit for the original styles belongs to them.  
+I have only reused and integrated it into a React component structure.
+
 ## Getting Started
 
 ### 1. Clone / copy repository
@@ -28,9 +34,5 @@ Plain JavaScript (no TypeScript), prop-driven, and designed to be easily reusabl
 git clone <your-repo-url>
 cd <your-project-directory>
 
-## 🎨 Credits
 
-The SCSS/CSS styling used in this project is adapted from [Trainer/Source Name]’s course/tutorial.  
-All design credit for the original styles belongs to them.  
-I have only reused and integrated it into a React component structure.
 
