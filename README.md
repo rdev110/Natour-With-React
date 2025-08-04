@@ -33,11 +33,14 @@ I have only reused and integrated it into a React component structure.
 ```bash
 git clone <your-repo-url>
 cd <your-project-directory>
+```
 
+## 2.Install Dependencies
 npm install
 # or
 yarn install
 
+## 3. Run the Development Server
 npm start
 # or
 yarn start
