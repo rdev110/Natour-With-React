@@ -24,19 +24,31 @@ const About = ({
   sections = [
     {
       heading: "You're going to fall in love with nature",
-      body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...",
+      body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
     },
     {
       heading: "Live adventures like you have never before",
-      body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      body: "It is a long established fact that a reader will be distracted by the readable content...",
     },
   ],
   ctaText = "Learn more →",
-  ctaHref = "#",
+  ctaHref = "#tours", // by default scroll to tours section
   images = defaultImages,
 }) => {
+  const handleCtaClick = (e) => {
+    e.preventDefault();
+    const target = document.querySelector(ctaHref);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="section-about" aria-label="About adventurous tours">
+    <section
+      id="about"
+      className="section-about"
+      aria-label="About adventurous tours"
+    >
       <div className="u-center-text u-margin-bottom-big">
         <h2 className="heading-secondary">{title}</h2>
       </div>
@@ -51,7 +63,13 @@ const About = ({
               <p className="paragraph">{sec.body}</p>
             </div>
           ))}
-          <a href={ctaHref} className="btn-text" aria-label={ctaText}>
+
+          <a
+            href={ctaHref}
+            className="btn-text"
+            aria-label={ctaText}
+            onClick={handleCtaClick}
+          >
             {ctaText}
           </a>
         </div>

@@ -26,7 +26,7 @@ const defaultFeatures = [
 
 const Feature = ({ features = defaultFeatures }) => {
   return (
-    <section className="section-features" aria-label="Features">
+    <section id="benefits" className="section-features" aria-label="Features">
       <div className="row">
         {features.map((f, i) => (
           <div className="col-1-of-4" key={i}>

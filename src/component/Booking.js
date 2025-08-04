@@ -48,7 +48,6 @@ const Booking = ({ onSubmit }) => {
       if (onSubmit) {
         await onSubmit(form);
       } else {
-        // fallback: simple log
         console.log("Booking submitted:", form);
       }
     } finally {
@@ -57,7 +56,11 @@ const Booking = ({ onSubmit }) => {
   };
 
   return (
-    <section className="section-book" aria-label="Booking section">
+    <section
+      id="book" // 👈 this enables smooth scroll from navigation
+      className="section-book"
+      aria-label="Booking section"
+    >
       <div className="row">
         <div className="book">
           <div className="book__form">
@@ -66,6 +69,7 @@ const Booking = ({ onSubmit }) => {
                 <h2 className="heading-secondary">Start booking now</h2>
               </div>
 
+              {/* Full name */}
               <div className="form__group">
                 <input
                   type="text"
@@ -95,6 +99,7 @@ const Booking = ({ onSubmit }) => {
                 )}
               </div>
 
+              {/* Email */}
               <div className="form__group">
                 <input
                   type="email"
@@ -124,6 +129,7 @@ const Booking = ({ onSubmit }) => {
                 )}
               </div>
 
+              {/* Radio buttons */}
               <div className="form__group u-margin-bottom-medium">
                 <div className="form__radio-group">
                   <input
@@ -158,6 +164,7 @@ const Booking = ({ onSubmit }) => {
                 </div>
               </div>
 
+              {/* Submit */}
               <div className="form__group">
                 <button
                   type="submit"

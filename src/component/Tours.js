@@ -13,7 +13,7 @@ const defaultTours = [
     price: "$297",
     pictureClass: "card__picture--1",
     backClass: "card__side--back-1",
-    ctaHref: "#",
+    ctaHref: "#book", // scroll to booking section
   },
   {
     id: "forest-hiker",
@@ -26,7 +26,7 @@ const defaultTours = [
     price: "$497",
     pictureClass: "card__picture--2",
     backClass: "card__side--back-2",
-    ctaHref: "#",
+    ctaHref: "#book",
   },
   {
     id: "snow-adventurer",
@@ -39,48 +39,62 @@ const defaultTours = [
     price: "$897",
     pictureClass: "card__picture--3",
     backClass: "card__side--back-3",
-    ctaHref: "#",
+    ctaHref: "#book",
   },
 ];
 
-const TourCard = ({ tour }) => (
-  <div className="col-1-of-3">
-    <div className="card">
-      <div className="card__side card__side--front">
-        <div className={`card__picture ${tour.pictureClass}`}></div>
-        <h4 className="card__heading">
-          <span
-            className={`card__heading-span ${`card__heading-span--${
-              tour.id.split("-")[0]
-            }`}`}
-          >
-            {tour.name}
-          </span>
-        </h4>
-        <div className="card__details">
-          <ul>
-            <li>{tour.duration}</li>
-            <li>{tour.capacity}</li>
-            <li>{tour.guides}</li>
-            <li>{tour.stay}</li>
-            <li>Difficulty: {tour.difficulty}</li>
-          </ul>
-        </div>
-      </div>
-      <div className={`card__side card__side--back ${tour.backClass}`}>
-        <div className="card__cta">
-          <div className="card__price-box">
-            <p className="card__price-only">Only</p>
-            <p className="card__price-value">{tour.price}</p>
+const TourCard = ({ tour }) => {
+  const handleScroll = (e, target) => {
+    e.preventDefault();
+    const element = document.querySelector(target);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div className="col-1-of-3">
+      <div className="card">
+        <div className="card__side card__side--front">
+          <div className={`card__picture ${tour.pictureClass}`}></div>
+          <h4 className="card__heading">
+            <span
+              className={`card__heading-span ${`card__heading-span--${
+                tour.id.split("-")[0]
+              }`}`}
+            >
+              {tour.name}
+            </span>
+          </h4>
+          <div className="card__details">
+            <ul>
+              <li>{tour.duration}</li>
+              <li>{tour.capacity}</li>
+              <li>{tour.guides}</li>
+              <li>{tour.stay}</li>
+              <li>Difficulty: {tour.difficulty}</li>
+            </ul>
           </div>
-          <a href={tour.ctaHref} className="btn btn--white">
-            Book now!
-          </a>
+        </div>
+        <div className={`card__side card__side--back ${tour.backClass}`}>
+          <div className="card__cta">
+            <div className="card__price-box">
+              <p className="card__price-only">Only</p>
+              <p className="card__price-value">{tour.price}</p>
+            </div>
+            <a
+              href={tour.ctaHref}
+              className="btn btn--white"
+              onClick={(e) => handleScroll(e, tour.ctaHref)}
+            >
+              Book now!
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 TourCard.propTypes = {
   tour: PropTypes.shape({
@@ -101,11 +115,19 @@ TourCard.propTypes = {
 const Tours = ({
   title = "Most Popular Tours",
   tours = defaultTours,
-  discoverHref = "#",
+  discoverHref = "#book", // default: scroll to booking
   discoverText = "Discover all tours",
 }) => {
+  const handleScroll = (e, target) => {
+    e.preventDefault();
+    const element = document.querySelector(target);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="section-tours" aria-label="Popular tours">
+    <section id="tours" className="section-tours" aria-label="Popular tours">
       <div className="u-center-text u-margin-bottom-big">
         <h2 className="heading-secondary">{title}</h2>
       </div>
@@ -115,7 +137,11 @@ const Tours = ({
         ))}
       </div>
       <div className="u-margin-top-huge u-center-text">
-        <a href={discoverHref} className="btn btn--green">
+        <a
+          href={discoverHref}
+          className="btn btn--green"
+          onClick={(e) => handleScroll(e, discoverHref)}
+        >
           {discoverText}
         </a>
       </div>

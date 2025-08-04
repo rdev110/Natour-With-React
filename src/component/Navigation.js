@@ -1,6 +1,25 @@
 import React from "react";
 
+const navItems = [
+  { href: "#about", label: "About Natours" },
+  { href: "#benefits", label: "Your benefits" },
+  { href: "#tours", label: "Popular tours" },
+  // { href: "#stories", label: "Stories" },
+  { href: "#book", label: "Book now" },
+];
+
 const Navigation = () => {
+  const handleClick = (e, href) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+    // close mobile nav
+    const toggle = document.getElementById("navi-toggle");
+    if (toggle) toggle.checked = false;
+  };
+
   return (
     <div className="navigation">
       <input
@@ -18,31 +37,18 @@ const Navigation = () => {
 
       <nav className="navigation__nav" aria-label="Main navigation">
         <ul className="navigation__list">
-          <li className="navigation__item">
-            <a href="#" className="navigation__link">
-              <span>01</span>About Natous
-            </a>
-          </li>
-          <li className="navigation__item">
-            <a href="#" className="navigation__link">
-              <span>02</span>Your benefits
-            </a>
-          </li>
-          <li className="navigation__item">
-            <a href="#" className="navigation__link">
-              <span>03</span>Popular tours
-            </a>
-          </li>
-          <li className="navigation__item">
-            <a href="#" className="navigation__link">
-              <span>04</span>Stories
-            </a>
-          </li>
-          <li className="navigation__item">
-            <a href="#" className="navigation__link">
-              <span>05</span>Book now
-            </a>
-          </li>
+          {navItems.map((item, idx) => (
+            <li className="navigation__item" key={item.href}>
+              <a
+                href={item.href}
+                className="navigation__link"
+                onClick={(e) => handleClick(e, item.href)}
+              >
+                <span>{String(idx + 1).padStart(2, "0")}</span>
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
