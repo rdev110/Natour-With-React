@@ -20,11 +20,6 @@ Plain JavaScript (no TypeScript), prop-driven, and designed to be easily reusabl
 - npm or yarn
 - A bundler/setup (e.g., Create React App, Vite, Next.js, or custom Webpack) — this README assumes a basic Create React App style project.
 
-## 🎨 Credits
-
-The SCSS/CSS styling used in this project is adapted from Jonas Schmedtmann’s course/tutorial.  
-All design credit for the original styles belongs to them.  
-I have only reused and integrated it into a React component structure.
 
 ## Getting Started
 
@@ -36,15 +31,19 @@ cd <your-project-directory>
 ```
 
 ## 2.Install Dependencies
+```bash
 npm install
 # or
 yarn install
-
+```
 ## 3. Run the Development Server
+```bash
 npm start
 # or
 yarn start
+```
+## 🎨 Credits
 
-
-
-
+The SCSS/CSS styling used in this project is adapted from Jonas Schmedtmann’s course/tutorial.  
+All design credit for the original styles belongs to them.  
+I have only reused and integrated it into a React component structure.
