@@ -1,5 +1,5 @@
 import React from "react";
-
+/* eslint-disable jsx-a11y/anchor-is-valid */
 const Footer = () => {
   return (
     <footer className="footer">
@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="footer__navigation">
             <ul className="footer__list">
               <li className="footer__item">
-                <a href="#" className="footer__link">
+                <a href="#about" className="footer__link">
                   Company
                 </a>
               </li>
