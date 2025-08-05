@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import Header from "./component/Header";
-import About from "./component/About";
-import Feature from "./component/Feature";
-import Tours from "./component/Tours";
-import Navigation from "./component/Navigation";
-import Footer from "./component/Footer";
-import Booking from "./component/Booking";
+import Header from "./components/Header";
+import About from "./components/About";
+import Feature from "./components/Feature";
+import Tours from "./components/Tours";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Booking from "./components/Booking";
 
 function App() {
   return (
